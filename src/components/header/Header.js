@@ -1,5 +1,5 @@
 import "./header.css";
-import BlogImg from "../images/nature.jpg";
+import BlogImg from "../../images/nature.jpg";
 function Header() {
   return (
     <div className="header">

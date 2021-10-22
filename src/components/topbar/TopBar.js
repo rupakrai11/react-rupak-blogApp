@@ -1,5 +1,5 @@
 import "./topbar.css";
-import Avatar from "../images/DSC_0600.JPG";
+import Avatar from "../../images/DSC_0600.JPG";
 export default function TopBar() {
   return (
     <>

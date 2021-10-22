@@ -1,5 +1,5 @@
 import "./post.css";
-import PostImg from "../images/nature.jpg";
+import PostImg from "../../images/nature.jpg";
 
 function Post() {
   return (

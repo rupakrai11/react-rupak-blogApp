@@ -1,5 +1,5 @@
 import "./sidebar.css";
-import MyImg from "../images/DSC_0600.JPG";
+import MyImg from "../../images/DSC_0600.JPG";
 
 function SideBar() {
   return (
