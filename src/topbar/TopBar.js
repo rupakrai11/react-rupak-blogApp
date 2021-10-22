@@ -20,7 +20,7 @@ export default function TopBar() {
         </div>
         <div className="topRight">
           <img src={Avatar} alt="Avatar" className="topImage" />
-          <i class="searchIcon fas fa-search"></i>
+          <i className="searchIcon fas fa-search"></i>
         </div>
       </div>
     </>

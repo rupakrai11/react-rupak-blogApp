@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   font-family: "Josefin Sans", sans-serif;
+  z-index: 999;
 }
 .topIcon {
   font-size: 20px;
@@ -44,4 +45,10 @@
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
+}
+.searchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 15px;
 }
