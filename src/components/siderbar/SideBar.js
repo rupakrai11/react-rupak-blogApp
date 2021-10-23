@@ -7,9 +7,11 @@ function SideBar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME</span>
         <img src={MyImg} alt="my image" width="300px" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.amet
-          consectetur, adipisicing elit
+        <p className="sidebarDesc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+          blanditiis atque obcaecati, rerum quisquam aliquam recusandae voluptas
+          vitae iste sed debitis repellendus, nihil quia veritatis optio beatae
+          ipsam! Expedita, veritatis.
         </p>
       </div>
 

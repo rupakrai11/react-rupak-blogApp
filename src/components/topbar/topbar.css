@@ -1,6 +1,6 @@
 .topbar {
   width: 100%;
-  background-color: #fff;
+  /* background-color: rgb(19, 110, 146); */
   position: sticky;
   top: 0%;
   height: 50px;
@@ -8,12 +8,24 @@
   align-items: center;
   font-family: "Josefin Sans", sans-serif;
   z-index: 999;
+  /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
+  background-image: radial-gradient(
+    circle 248px at center,
+    #16d9e3 0%,
+    #30c7ec 47%,
+    #46aef7 100%
+  );
 }
 .topIcon {
   font-size: 20px;
   margin-right: 10px;
   color: #444;
   cursor: pointer;
+}
+.topLeft {
+  /* color: #fff; */
+  font-family: "Lora", serif;
+  font-weight: bold;
 }
 
 .topLeft,
@@ -22,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* font-family: "Lora", serif; */
 }
 
 .topCenter {
@@ -48,7 +61,7 @@
 }
 .searchIcon {
   font-size: 18px;
-  color: #666;
+  color: #fff;
   cursor: pointer;
   margin-left: 15px;
 }
