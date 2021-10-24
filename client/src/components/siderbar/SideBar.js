@@ -1,7 +1,18 @@
 import "./sidebar.css";
 import MyImg from "../../images/DSC_0600.JPG";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function SideBar() {
+  const [cats, setCats] = useState([]);
+  useEffect(() => {
+    const getCats = async () => {
+      const res = await axios.get("/categories");
+      setCats(res.data);
+      console.log(res.data);
+    };
+    getCats();
+  }, []);
   return (
     <div className="sideabr ">
       <div className="sidebarItem">
@@ -17,13 +28,11 @@ function SideBar() {
 
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
+
         <ul className="sidebarList">
-          <li className="sidebarListItem">Life</li>
-          <li className="sidebarListItem">Music</li>
-          <li className="sidebarListItem">Style</li>
-          <li className="sidebarListItem">Sport</li>
-          <li className="sidebarListItem">Tech</li>
-          <li className="sidebarListItem">Cinema</li>
+          {cats.map((c) => (
+            <li className="sidebarListItem">{c.name}</li>
+          ))}
         </ul>
       </div>
       <div className="sidebarItem">

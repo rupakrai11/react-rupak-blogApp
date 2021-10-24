@@ -1,18 +1,35 @@
 import "./singlepost.css";
 import SinglePostImg from "../../images/nature.jpg";
+import { useLocation } from "react-router";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SinglePost() {
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+  const [post, setPost] = useState({});
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + path);
+      setPost(res.data);
+    };
+    getPost();
+  }, [path]);
   return (
     <>
       <div className="singlePost">
         <div className="singlePostWrapper">
-          <img
-            src={SinglePostImg}
-            alt="single post image"
-            className="singlePostImg"
-          />
+          {post.photo && (
+            <img
+              src={post.photo}
+              alt="single post image"
+              className="singlePostImg"
+            />
+          )}
+
           <h1 className="singlePostTitle">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            {post.title}
             <div className="singlePostEdit">
               <i className="singlePostIcon fas fa-edit"></i>
               <i className="singlePostIcon far fa-trash-alt"></i>
@@ -20,26 +37,16 @@ export default function SinglePost() {
           </h1>
           <div className="singlePostInfo">
             <span className="singlePostAuthor">
-              Author:<b>Rupak</b>
+              Author:
+              <Link to={`/?user=${post.username}`} className="link">
+                <b> {post.username} </b>
+              </Link>
             </span>
-            <span className="singlePostDate">1 hour ago</span>
+            <span className="singlePostDate">
+              {new Date(post.createdAt).toDateString()}
+            </span>
           </div>
-          <p className="singlePostDesc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            corrupti doloribus magni quidem laudantium debitis nam consequuntur
-            nemo enim deserunt eveniet nobis assumenda, ut eligendi et tempore
-            ducimus sed. Quibusdam. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nostrum corrupti doloribus magni quidem laudantium
-            debitis nam consequuntur nemo enim deserunt eveniet nobis assumenda,
-            ut eligendi et tempore ducimus sed. Quibusdam. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Nostrum corrupti doloribus magni
-            quidem laudantium debitis nam consequuntur nemo enim deserunt
-            eveniet nobis assumenda, ut eligendi et tempore ducimus sed.
-            Quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Nostrum corrupti doloribus magni quidem laudantium debitis nam
-            consequuntur nemo enim deserunt eveniet nobis assumenda, ut eligendi
-            et tempore ducimus sed. Quibusdam.
-          </p>
+          <p className="singlePostDesc">{post.desc}</p>
         </div>
       </div>
     </>

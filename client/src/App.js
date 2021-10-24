@@ -8,7 +8,7 @@ import Register from "./pages/register/Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-  const user = true;
+  const user = false;
   return (
     <>
       <Router>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/write">{user ? <Write /> : <Register />}</Route>
           <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
           <Route path="/post/:postId">
-            <Settings />
+            <Single />
           </Route>
         </Switch>
       </Router>
