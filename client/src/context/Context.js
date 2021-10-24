@@ -3,7 +3,7 @@ import Reducer from "./Reducer";
 import { useEffect } from "react";
 
 const INITIAL_STATE = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")) || null,
   isFetching: false,
   error: false,
 };

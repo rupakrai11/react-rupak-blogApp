@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Post({ post }) {
+  const PF = "http://localhost:5000/images/";
   return (
     <div className="post">
       {post.photo && (
-        <img src={post.photo} alt="post-img" className="postImg" />
+        <img src={PF + post.photo} alt="post-img" className="postImg" />
       )}
       <div className="postInfo">
         <div className="postCats">
