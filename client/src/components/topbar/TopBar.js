@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
+
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -12,7 +14,11 @@ export default function TopBar() {
     <>
       <div className="topbar">
         <div className="topLeft">
-          <h2>BLOG</h2>
+          <h2>
+            <Link to="/" className="link">
+              BLOG
+            </Link>
+          </h2>
           {/* <i className="topIcon fab fa-facebook"></i>
           <i className="topIcon fab fa-twitter"></i>
           <i className="topIcon fab fa-pinterest"></i>
@@ -25,30 +31,17 @@ export default function TopBar() {
                 HOME
               </Link>
             </li>
-            <li className="topListItem">
-              {" "}
-              <Link to="/about" className="link">
-                ABOUT
-              </Link>
-            </li>
+
             <li className="topListItem">
               {" "}
               <Link to="/write" className="link">
                 WRITE
               </Link>
             </li>
-            <li className="topListItem">
-              <Link to="/" className="link">
-                CONTACT
-              </Link>
-            </li>
+
             <li className="topListItem" onClick={handleLogout}>
               {" "}
-              <Link
-                to="/"
-                className="link"
-                style={{ backgroundColor: "maroon" }}
-              >
+              <Link to="/" className="link ">
                 {user && "LOGOUT"}
               </Link>
             </li>
@@ -57,7 +50,11 @@ export default function TopBar() {
         <div className="topRight">
           {user ? (
             <Link to="/settings" className="link">
-              <img src={user.profilePic} alt="Avatar" className="topImage" />
+              <img
+                src={PF + user.profilePic}
+                alt="Avatar"
+                className="topImage"
+              />
             </Link>
           ) : (
             <ul className="topList">

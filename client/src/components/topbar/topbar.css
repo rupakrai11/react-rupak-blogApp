@@ -66,3 +66,8 @@
   cursor: pointer;
   margin-left: 15px;
 }
+.logout {
+  background-color: turquoise;
+  border-radius: 5px;
+  padding: 5px;
+}

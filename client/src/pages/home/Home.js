@@ -20,8 +20,16 @@ function Home() {
     <>
       <Header />
       <div className="home">
-        <Posts posts={posts} />
-        <SideBar />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-9">
+              <Posts posts={posts} />
+            </div>
+            <div className="col-3">
+              <SideBar />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

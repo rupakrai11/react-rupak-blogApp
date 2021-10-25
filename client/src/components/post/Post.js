@@ -22,9 +22,12 @@ function Post({ post }) {
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
         </span>
-        <span className="postArthur" style={{ color: "gray" }}>
+        <Link to={`/?user=${post.username}`} className="link">
+          <b> {post.username} </b>
+        </Link>
+        {/* <span className="postArthur" style={{ color: "gray" }}>
           Author: {post.username}
-        </span>
+        </span> */}
       </div>
       <p className="postDesc">{post.desc}</p>
     </div>

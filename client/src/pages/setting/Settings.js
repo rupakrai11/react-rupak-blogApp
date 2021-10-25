@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 export default function Settings() {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -52,7 +53,7 @@ export default function Settings() {
             <label htmlFor="">Profile Picture</label>
             <div className="settingsPP">
               <img
-                src={file ? URL.createObjectURL(file) : user.profilePic}
+                src={file ? URL.createObjectURL(file) : PF + user.profilePic}
                 alt="setting image"
                 width="100%"
               />
